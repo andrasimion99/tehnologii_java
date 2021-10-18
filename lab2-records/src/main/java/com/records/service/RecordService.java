@@ -20,4 +20,9 @@ public class RecordService {
     public List<Records> listRecords(){
         return recordDAO.getAll();
     }
+
+    public void createRecord(String category, String name, String value) {
+        Records record = new Records(category, name, value);
+        recordDAO.create(record);
+    }
 }

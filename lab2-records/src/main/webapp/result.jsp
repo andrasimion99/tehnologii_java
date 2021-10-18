@@ -12,13 +12,13 @@
     <title>Result</title>
 </head>
 <body>
-<h1>RESUULT</h1>
+<h1 align="center">RECORDS</h1>
 <div align="center">
     <table cellpadding="5px" border="1">
         <tr>
             <th>Id</th>
             <th>Category</th>
-            <th>Key</th>
+            <th>Name</th>
             <th>Value</th>
         </tr>
         <jsp:useBean id="listRecords" scope="request" type="java.util.List"/>
@@ -31,6 +31,9 @@
             </tr>
         </c:forEach>
     </table>
+</div>
+<div align="center">
+    <a href="InputServlet">Add another record</a>
 </div>
 </body>
 </html>

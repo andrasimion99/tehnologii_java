@@ -15,7 +15,7 @@ public class JpaDAO<T> {
     }
 
     public T create(T t){
-        entityManager.getTransaction().commit();
+        entityManager.getTransaction().begin();
 
         entityManager.persist(t);
         entityManager.flush();
@@ -37,6 +37,5 @@ public class JpaDAO<T> {
     public List<T> getAllWithNamedQuery(String queryName){
         Query query = entityManager.createNamedQuery(queryName);
         return (List<T>) query.getResultList();
-//        return (List<Records>) entityManager.createQuery("SELECT r FROM Records r").getResultList();
     }
 }

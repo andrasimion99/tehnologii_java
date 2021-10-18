@@ -3,7 +3,7 @@ package com.records.entity;
 import javax.persistence.*;
 
 @Entity
-@NamedQuery(name = "Records.getAll", query = "SELECT r FROM Records r")
+@NamedQuery(name = "Records.getAll", query = "SELECT r FROM Records r ORDER BY r.category")
 @Table(name = "records")
 public class Records {
     @Id
@@ -16,6 +16,15 @@ public class Records {
     private String name;
     @Column(name = "value")
     private String value;
+
+    public Records() {
+    }
+
+    public Records(String category, String name, String value) {
+        this.category = category;
+        this.name = name;
+        this.value = value;
+    }
 
     public Integer getRecordId() {
         return recordId;
