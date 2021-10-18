@@ -6,4 +6,8 @@
     <welcome-file-list>
         <welcome-file>input.jsp</welcome-file>
     </welcome-file-list>
+    <context-param>
+        <param-name>defaultCategory</param-name>
+        <param-value>Object</param-value>
+    </context-param>
 </web-app>

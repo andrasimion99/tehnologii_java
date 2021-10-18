@@ -21,6 +21,7 @@
         <br/>
         Category:
         <select id="category" name="category">
+            <option>${applicationScope.defaultCategory}</option>
             <c:forEach var="category" items="${categories}">
                 <option value="${category}">${category}</option>
             </c:forEach>

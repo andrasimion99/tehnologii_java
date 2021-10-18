@@ -13,6 +13,8 @@ public class DefaultCategoryListener implements ServletContextListener, HttpSess
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         /* This method is called when the servlet context is initialized(when the Web application is deployed). */
+        String category = sce.getServletContext().getInitParameter("defaultCategory");
+        sce.getServletContext().setAttribute("defaultCategory", category);
     }
 
     @Override
