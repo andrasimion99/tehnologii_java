@@ -4,15 +4,18 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.lang.model.type.NullType;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.Objects;
 
 @WebServlet(name = "InputServlet", value = "/InputServlet")
@@ -31,6 +34,17 @@ public class InputServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for(Cookie c : cookies)
+            {
+                if(c.getName().equals("category")){
+                    request.setAttribute("cookieCategory", c.getValue());
+                }
+            }
+        }
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/input.jsp");
         requestDispatcher.forward(request, response);
     }

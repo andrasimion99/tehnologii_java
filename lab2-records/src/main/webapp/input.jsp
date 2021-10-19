@@ -21,10 +21,27 @@
         <br/>
         Category:
         <select id="category" name="category">
-            <option>${applicationScope.defaultCategory}</option>
-            <c:forEach var="category" items="${categories}">
-                <option value="${category}">${category}</option>
-            </c:forEach>
+            <c:choose>
+                <c:when test="${cookieCategory == null}">
+                    <option selected>${applicationScope.defaultCategory}</option>
+                    <c:forEach var="category" items="${categories}">
+                        <option value="${category}">${category}</option>
+                    </c:forEach>
+                </c:when>
+                <c:otherwise>
+                    <option>${applicationScope.defaultCategory}</option>
+                    <c:forEach var="category" items="${categories}">
+                        <c:choose>
+                            <c:when test="${category.equals(cookieCategory)}">
+                                <option selected value="${category}">${category}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${category}">${category}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
         </select>
         <br/>
         <input type="submit" value="Add"/>
