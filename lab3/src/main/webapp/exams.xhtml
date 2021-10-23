@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:metadata>
+    <f:event listener="#{examController.loadExams()}" type="preRenderView"/>
+</f:metadata>
+<h:head>
+    <title>#{msg.title_exams}</title>
+</h:head>
+<f:view >
+    <h:outputLabel style="font-size: large" value="#{msg.title_exams}"/>
+    <h:form>
+        <h:panelGrid columns="3">
+            Language :
+            <h:commandButton value="English" action="#{languageController.changeLanguage('en')}"/>
+            <h:commandButton value="Italian" action="#{languageController.changeLanguage('it')}"/>
+        </h:panelGrid>
+    </h:form>
+    <hr/>
+    <h3>#{msg.add_exam}</h3>
+    <h:form id="add_exam" style="margin-top: 10px;">
+        <h:panelGrid columns="1">
+            <h:outputLabel>#{msg.exam_name}</h:outputLabel>
+            <h:inputText value="#{examName}" id="name"
+                         required="true" requiredMessage="You must enter a name"/>
+            <h:message for="name"/>
+
+            <h:outputLabel>#{msg.exam_starting_time}</h:outputLabel>
+            <h:inputText value="#{examStartingDate}" id="startingDate"
+                         required="true" requiredMessage="You must enter a starting time">
+                <f:convertDateTime pattern = "yyyy/MM/dd HH:mm:ss" />
+            </h:inputText>
+            <h:message for="startingDate"/>
+
+            <h:outputLabel>#{msg.exam_duration}</h:outputLabel>
+            <h:inputText value="#{examDuration}" id="duration"
+                         required="true" requiredMessage="You must enter the duration of the exam"/>
+            <h:message for="duration"/>
+
+            <h:commandButton value="#{msg.save_exam}" action="#{examController.addExam(examName, examStartingDate, examDuration)}"/>
+        </h:panelGrid>
+    </h:form>
+    <hr/>
+    <h3>#{msg.view_exams}</h3>
+    <h:dataTable value="#{examController.exams}" var="exam" border="1">
+        <h:column>
+            <f:facet name="header">Id</f:facet>
+            #{exam.examId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">#{msg.exam_name}</f:facet>
+            #{exam.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">#{msg.exam_starting_time}</f:facet>
+            #{exam.startingDate}
+        </h:column>
+        <h:column>
+            <f:facet name="header">#{msg.exam_duration}</f:facet>
+            #{exam.duration} min
+        </h:column>
+    </h:dataTable>
+
+    <h:link value="#{msg.students_page}" outcome="students" />
+
+    <h:messages id="errors" style="color: red"/>
+</f:view>
+</html>

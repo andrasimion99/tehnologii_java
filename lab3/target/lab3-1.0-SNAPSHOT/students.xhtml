@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:metadata>
+    <f:event listener="#{studentController.loadStudents()}" type="preRenderView"/>
+</f:metadata>
+<h:head>
+    <title>#{msg.title_students}</title>
+</h:head>
+<f:view >
+    <h:outputLabel style="font-size: large" value="#{msg.title_students}"/>
+    <h:form>
+        <h:panelGrid columns="3">
+            Language :
+            <h:commandButton value="English" action="#{languageController.changeLanguage('en')}"/>
+            <h:commandButton value="Italian" action="#{languageController.changeLanguage('it')}"/>
+        </h:panelGrid>
+    </h:form>
+
+    <hr/>
+        <h3>#{msg.add_students}</h3>
+        <h:form id="add_student" style="margin-top: 10px;">
+            <h:panelGrid columns="1">
+                <h:outputLabel>#{msg.student_name}</h:outputLabel>
+                <h:inputText value="#{student.name}" id="name"
+                             required="true" requiredMessage="You must enter a name"/>
+                <h:commandButton value="#{msg.save_student}" action="#{studentController.addStudent(student)}"/>
+            </h:panelGrid>
+        </h:form>
+    <hr/>
+    <h3>#{msg.view_students}</h3>
+    <h:dataTable value="#{studentController.students}" var="stud" border="1">
+        <h:column>
+            <f:facet name="header">Id</f:facet>
+            #{stud.studentId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">#{msg.student_name}</f:facet>
+            #{stud.name}
+        </h:column>
+    </h:dataTable>
+
+    <h:link value="#{msg.exam_page}" outcome="exams" />
+
+    <h:messages id="errors" style="color: red"/>
+</f:view>
+</html>
