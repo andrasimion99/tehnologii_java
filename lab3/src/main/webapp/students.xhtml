@@ -42,6 +42,9 @@
             <f:facet name="header">#{msg.student_name}</f:facet>
             #{stud.name}
         </h:column>
+        <h:column>
+            <h:link value="Set Exams" outcome="exams"/>
+        </h:column>
     </h:dataTable>
 
     <h:link value="#{msg.exam_page}" outcome="exams" />
