@@ -26,11 +26,19 @@
         <h:form id="add_student" style="margin-top: 10px;">
             <h:panelGrid columns="1">
                 <h:outputLabel>#{msg.student_name}</h:outputLabel>
-                <h:inputText value="#{student.name}" id="name"
+                <h:inputText value="#{studentName}" id="name"
                              required="true" requiredMessage="You must enter a name"/>
-                <h:commandButton value="#{msg.save_student}" action="#{studentController.addStudent(student)}"/>
+                <h:message for="name"/>
+
+                <h:outputLabel>#{msg.student_exams}</h:outputLabel>
+                <h:inputText value="#{studentExams}" id="exams"
+                             required="true" requiredMessage="You must enter the ids of the exams"/>
+                <h:message for="exams"/>
+
+                <h:commandButton value="#{msg.save_student}" action="#{studentController.addStudent(studentName, studentExams)}"/>
             </h:panelGrid>
         </h:form>
+
     <hr/>
     <h3>#{msg.view_students}</h3>
     <h:dataTable value="#{studentController.students}" var="stud" border="1">
@@ -43,7 +51,9 @@
             #{stud.name}
         </h:column>
         <h:column>
-            <h:link value="Set Exams" outcome="exams"/>
+<!--            <h:link value="See Exams" outcome="exams"/>-->
+            <f:facet name="header">Exams</f:facet>
+            #{stud.exams}
         </h:column>
     </h:dataTable>
 

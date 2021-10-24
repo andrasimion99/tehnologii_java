@@ -2,18 +2,28 @@ package com.lab3.lab3.entity;
 
 
 import javax.faces.bean.ManagedBean;
+import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean(name = "student")
 public class Student {
     private Integer studentId;
     private String name;
+    private List<Exam> exams;
 
     public Student() {
+        exams = new ArrayList<>();
     }
 
-    public Student(Integer studentId, String name) {
+    public Student(String name, List<Exam> exams) {
+        this.name = name;
+        this.exams = exams;
+    }
+
+    public Student(Integer studentId, String name, List<Exam> exams) {
         this.studentId = studentId;
         this.name = name;
+        this.exams = exams;
     }
 
     public Integer getStudentId() {
@@ -32,11 +42,20 @@ public class Student {
         this.name = name;
     }
 
+    public List<Exam> getExams() {
+        return exams;
+    }
+
+    public void setExams(List<Exam> exams) {
+        this.exams = exams;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "studentId=" + studentId +
                 ", name='" + name + '\'' +
+                ", exams=" + exams +
                 '}';
     }
 }

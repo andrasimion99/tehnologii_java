@@ -15,7 +15,7 @@ public class StudentService {
         studentDao = StudentDao.getInstance();
     }
 
-    public List<Student> getStudents() throws SQLException {
+    public List<Student> getStudents() throws SQLException, NamingException {
         return studentDao.getAll();
     }
 

@@ -6,6 +6,7 @@ import com.lab3.lab3.entity.Student;
 
 import javax.naming.NamingException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExamService {
@@ -21,5 +22,18 @@ public class ExamService {
 
     public void addExam(Exam exam) throws SQLException {
         examDao.add(exam);
+    }
+
+    public Exam getExamById(Integer id) throws SQLException {
+        return examDao.getById(id);
+    }
+
+    public List<Exam> getExamsById(List<Integer> ids) throws SQLException {
+        List<Exam> exams = new ArrayList<>();
+        for (Integer id: ids)
+        {
+            exams.add(examDao.getById(id));
+        }
+        return exams;
     }
 }

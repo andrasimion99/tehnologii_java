@@ -35,6 +35,30 @@ public class ExamDao {
         return (DataSource) context.lookup(jndiName);
     }
 
+    public Exam getById(Integer id) throws SQLException {
+        Exam exam = new Exam();
+        Connection conn = dataSource.getConnection();
+
+        String query = "select * from exams where exam_id = ?";
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1, id);
+
+        ResultSet result = statement.executeQuery();
+        while(result.next()){
+            Integer exam_id = result.getInt("exam_id");
+            String name = result.getString("name");
+            Timestamp date = result.getTimestamp("starting_time");
+            Integer duration= result.getInt("duration");
+            exam = new Exam(exam_id, name, new Date(date.getTime()), duration);
+        }
+
+        result.close();
+        statement.close();
+        conn.close();
+
+        return exam;
+    }
+
     public List<Exam> getAll() throws SQLException {
         List<Exam> exams = new ArrayList<>();
 
@@ -60,16 +84,13 @@ public class ExamDao {
     public void add(Exam exam) throws SQLException {
         Connection conn = dataSource.getConnection();
         String query = "insert into exams (name, starting_time, duration) values (?, ?, ?)";
-//        Date date = new Date(exam.getStartingDate().getTime());
-//        DateFormat df=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-//        Date d = exam.getStartingDate();
-//        df.format(d);
-        System.out.println("HERE " + exam.getStartingDate());
+
         PreparedStatement statement = conn.prepareStatement(query);
         statement.setString(1, exam.getName());
         statement.setTimestamp(2, new Timestamp(exam.getStartingDate().getTime()));
         statement.setInt(3, exam.getDuration());
         statement.execute();
+
         conn.close();
         statement.close();
     }
