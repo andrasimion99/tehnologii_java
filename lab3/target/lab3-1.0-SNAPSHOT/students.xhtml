@@ -4,61 +4,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 <f:metadata>
     <f:event listener="#{studentController.loadStudents()}" type="preRenderView"/>
 </f:metadata>
-<h:head>
-    <title>#{msg.title_students}</title>
-</h:head>
-<f:view >
-    <h:outputLabel style="font-size: large" value="#{msg.title_students}"/>
-    <h:form>
-        <h:panelGrid columns="3">
-            Language :
-            <h:commandButton value="English" action="#{languageController.changeLanguage('en')}"/>
-            <h:commandButton value="Italian" action="#{languageController.changeLanguage('it')}"/>
-        </h:panelGrid>
-    </h:form>
+<f:view>
+    <h:head>
+        <title>#{msg.title_students}</title>
+    </h:head>
+    <h:body>
+        <p:outputLabel style="font-size: large" value="#{msg.title_students}"/>
 
-    <hr/>
-        <h3>#{msg.add_students}</h3>
+        <hr/>
+        <p:outputLabel>#{msg.add_students}</p:outputLabel>
         <h:form id="add_student" style="margin-top: 10px;">
             <h:panelGrid columns="1">
-                <h:outputLabel>#{msg.student_name}</h:outputLabel>
-                <h:inputText value="#{studentName}" id="name"
+                <p:outputLabel>#{msg.student_name}</p:outputLabel>
+                <p:inputText value="#{studentName}" id="name"
                              required="true" requiredMessage="You must enter a name"/>
-                <h:message for="name"/>
+                <p:message for="name"/>
 
-                <h:outputLabel>#{msg.student_exams}</h:outputLabel>
-                <h:inputText value="#{studentExams}" id="exams"
+                <p:outputLabel>#{msg.student_exams}</p:outputLabel>
+                <p:inputText value="#{studentExams}" id="exams"
                              required="true" requiredMessage="You must enter the ids of the exams"/>
-                <h:message for="exams"/>
+                <p:message for="exams"/>
 
-                <h:commandButton value="#{msg.save_student}" action="#{studentController.addStudent(studentName, studentExams)}"/>
+                <h:commandButton value="#{msg.save_student}"
+                                 action="#{studentController.addStudent(studentName, studentExams)}"/>
             </h:panelGrid>
         </h:form>
 
-    <hr/>
-    <h3>#{msg.view_students}</h3>
-    <h:dataTable value="#{studentController.students}" var="stud" border="1">
-        <h:column>
-            <f:facet name="header">Id</f:facet>
-            #{stud.studentId}
-        </h:column>
-        <h:column>
-            <f:facet name="header">#{msg.student_name}</f:facet>
-            #{stud.name}
-        </h:column>
-        <h:column>
-<!--            <h:link value="See Exams" outcome="exams"/>-->
-            <f:facet name="header">Exams</f:facet>
-            #{stud.exams}
-        </h:column>
-    </h:dataTable>
+        <hr/>
+        <p:outputLabel>#{msg.view_students}</p:outputLabel>
+        <p:dataTable value="#{studentController.students}" var="stud" border="1">
+            <p:column>
+                <f:facet name="header">Id</f:facet>
+                #{stud.studentId}
+            </p:column>
+            <p:column>
+                <f:facet name="header">#{msg.student_name}</f:facet>
+                #{stud.name}
+            </p:column>
+            <p:column>
+                <!--            <h:link value="See Exams" outcome="exams"/>-->
+                <f:facet name="header">Exams</f:facet>
+                #{stud.exams}
+            </p:column>
+        </p:dataTable>
 
-    <h:link value="#{msg.exam_page}" outcome="exams" />
+        <p:link value="#{msg.exam_page}" outcome="exams"/>
 
-    <h:messages id="errors" style="color: red"/>
+        <p:messages id="errors" style="color: red"/>
+    </h:body>
 </f:view>
 </html>

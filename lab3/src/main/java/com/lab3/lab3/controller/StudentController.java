@@ -70,6 +70,24 @@ public class StudentController implements Serializable {
         }
     }
 
+    public void addStudent(Student student, String examsId) {
+        logger.info("Adding student");
+        List<Integer> ids = new ArrayList<>();
+        for (String number:examsId.split(",")) {
+            ids.add(Integer.parseInt(number));
+        }
+        System.out.println("IDS:" + ids);
+
+        try {
+            List<Exam> exams = examService.getExamsById(ids);
+            student.setExams(exams);
+            studentService.addStudent(student);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error while saving the student");
+            addErrorMessage(e);
+        }
+    }
+
     private void addErrorMessage(Exception e) {
         FacesMessage message = new FacesMessage("Error: " + e.getMessage());
         FacesContext.getCurrentInstance().addMessage(null, message);

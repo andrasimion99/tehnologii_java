@@ -52,9 +52,17 @@ public class ExamController implements Serializable {
     public void addExam(String name, Date date, Integer duration) {
         logger.info("Adding exam");
         Exam exam = new Exam(name, date, duration);
-        logger.info("The name:" + name);
-        logger.info("HEEEERE " + exam.getName());
-        logger.info(exam.getStartingDate().toString());
+        try {
+            examService.addExam(exam);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error while saving the exam");
+            addErrorMessage(e);
+        }
+    }
+
+    public void addExam(Exam exam, Date date) {
+        logger.info("Adding exam");
+        exam.setStartingDate(date);
         try {
             examService.addExam(exam);
         } catch (Exception e) {

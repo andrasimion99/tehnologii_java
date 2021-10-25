@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+    <p:commandButton value="#{addEntity}" type="button" onclick="PF('dlg').show()"/>
+    <p:dialog header="#{addEntity}" widgetVar="dlg" minHeight="40" width="350" showEffect="fade" modal="true">
+        <h:form style="margin-top: 10px;">
+            <h:panelGrid columns="1">
+                <ui:repeat value="#{items}" var="item">
+                    <div>
+                        <pe:switch value="#{item}">
+
+                            <pe:case value="startingDate">
+                                <p:outputLabel>#{item}</p:outputLabel>
+                                <p:inputText value="#{special}" id="date"
+                                             required="true">
+                                    <f:convertDateTime pattern = "yyyy/MM/dd HH:mm:ss" />
+                                </p:inputText>
+                                <p:message for="date"/>
+                            </pe:case>
+
+                            <pe:case value="exams">
+                                <p:outputLabel>#{item}</p:outputLabel>
+                                <p:inputText value="#{special}" id="list"
+                                             required="true"/>
+                                <p:message for="list"/>
+                            </pe:case>
+
+
+                            <pe:defaultCase>
+                                <p:outputLabel>#{item}</p:outputLabel>
+                                <p:inputText value="#{entity[item]}" id="item"
+                                             required="true"/>
+                                <p:message for="item"/>
+                            </pe:defaultCase>
+
+                        </pe:switch>
+                    </div>
+
+                </ui:repeat>
+
+                <h:commandButton value="#{msg.save_exam}" action="#{controller[addEntityMethod](entity, special)}"/>
+            </h:panelGrid>
+        </h:form>
+    </p:dialog>
+</h:body>
+</html>

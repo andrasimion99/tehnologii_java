@@ -26,6 +26,25 @@ public class Student {
         this.exams = exams;
     }
 
+    public List<String> getAllFields(){
+        return new ArrayList<String>(){
+            {
+                add("studentId");
+                add("name");
+                add("exams");
+            }
+        };
+    }
+
+    public List<String> getAllInputs(){
+        return new ArrayList<String>(){
+            {
+                add("name");
+                add("exams");
+            }
+        };
+    }
+
     public Integer getStudentId() {
         return studentId;
     }

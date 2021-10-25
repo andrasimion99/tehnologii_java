@@ -3,7 +3,9 @@ package com.lab3.lab3.entity;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @ManagedBean(name = "exam")
@@ -27,6 +29,27 @@ public class Exam implements Serializable {
         this.name = name;
         this.startingDate = startingDate;
         this.duration = duration;
+    }
+
+    public List<String> getAllFields(){
+        return new ArrayList<String>(){
+            {
+                add("examId");
+                add("name");
+                add("startingDate");
+                add("duration");
+            }
+        };
+    }
+
+    public List<String> getAllInputs(){
+        return new ArrayList<String>(){
+            {
+                add("name");
+                add("startingDate");
+                add("duration");
+            }
+        };
     }
 
     public Integer getExamId() {
