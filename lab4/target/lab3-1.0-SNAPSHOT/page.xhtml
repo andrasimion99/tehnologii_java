@@ -25,6 +25,10 @@
                     <ui:param name="controller" value="#{controller}" />
                     <ui:param name="addEntityMethod" value="#{addEntityMethod}" />
                 </ui:include>
+
+                <h:outputText id="poll" value="All Subject Where students have to take exams: #{counterController.getExam()}"/>
+                <p:poll interval="1" listener="#{counterController.goNext}" update="poll"/>
+
                 <ui:include src="dataView.xhtml">
                     <ui:param name="controller" value="#{controller}" />
                     <ui:param name="loadData" value="#{loadData}" />
