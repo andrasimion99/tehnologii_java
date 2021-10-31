@@ -1,9 +1,11 @@
-# Lab3-4
+# Lab4
 
 Initially, for lab 3, I created 2 pages: students.xhtml and exams.xhtml where you could add students/exams and see all students and all exams.
 
 For the lab 4, I refactored a bit and now the main pages are the examsMain.xhtml and studentsMain.xhtml which only use the template="page.xhtml"
 and send different params depending on what we what to see: students or exams.
+I used a poll in order to display at the top of the page all the subject the students have exams on.
+Each item is displayed in page at 1 sec interval.
 
 The page.xhtml template includes more components: 
 
