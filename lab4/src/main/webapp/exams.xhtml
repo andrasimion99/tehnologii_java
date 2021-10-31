@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:metadata>
+    <f:event listener="#{examController.loadExams()}" type="preRenderView"/>
+</f:metadata>
+<h:head>
+    <title>#{msg.title_exams}</title>
+</h:head>
+<f:view >
+    <p:outputLabel style="font-size: large" value="#{msg.title_exams}"/>
+
+    <hr/>
+
+    <p:outputLabel>#{msg.add_exam}</p:outputLabel>
+    <h:form id="add_exam" style="margin-top: 10px;">
+        <h:panelGrid columns="1">
+            <p:outputLabel>#{msg.exam_name}</p:outputLabel>
+            <p:inputText value="#{examName}" id="name"
+                         required="true"/>
+            <p:message for="name"/>
+
+            <p:outputLabel>#{msg.exam_starting_time}</p:outputLabel>
+            <p:inputText value="#{examStartingDate}" id="startingDate"
+                         required="true" requiredMessage="You must enter a starting time">
+                <f:convertDateTime pattern = "yyyy/MM/dd HH:mm:ss" />
+            </p:inputText>
+            <p:message for="startingDate"/>
+
+            <p:outputLabel>#{msg.exam_duration}</p:outputLabel>
+            <p:inputText value="#{examDuration}" id="duration"
+                         required="true" requiredMessage="You must enter the duration of the exam"/>
+            <p:message for="duration"/>
+
+            <h:commandButton value="#{msg.save_exam}" action="#{examController.addExam(examName, examStartingDate, examDuration)}"/>
+        </h:panelGrid>
+    </h:form>
+
+    <hr/>
+    <p:outputLabel>#{msg.view_exams}</p:outputLabel>
+    <p:dataTable value="#{examController.exams}" var="exam" border="1">
+        <p:column>
+            <f:facet name="header">Id</f:facet>
+            #{exam.examId}
+        </p:column>
+        <p:column>
+            <f:facet name="header">#{msg.exam_name}</f:facet>
+            #{exam.name}
+        </p:column>
+        <p:column>
+            <f:facet name="header">#{msg.exam_starting_time}</f:facet>
+            #{exam.startingDate}
+        </p:column>
+        <p:column>
+            <f:facet name="header">#{msg.exam_duration}</f:facet>
+            #{exam.duration} min
+        </p:column>
+    </p:dataTable>
+
+    <p:link value="#{msg.students_page}" outcome="students" />
+
+    <p:messages id="errors" style="color: red"/>
+</f:view>
+</html>
