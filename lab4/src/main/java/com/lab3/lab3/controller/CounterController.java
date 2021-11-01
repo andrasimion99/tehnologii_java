@@ -30,7 +30,6 @@ public class CounterController {
             logger.log(Level.SEVERE, "Error while creating examService and getting all exams");
             addErrorMessage(e);
         }
-
     }
 
     public String getExam() {

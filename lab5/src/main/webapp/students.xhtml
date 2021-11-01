@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:metadata>
+    <f:event listener="#{studentController.loadStudents()}" type="preRenderView"/>
+</f:metadata>
+<f:view>
+    <h:head>
+        <title>#{msg.title_students}</title>
+    </h:head>
+    <h:body>
+        <p:outputLabel style="font-size: large" value="#{msg.title_students}"/>
+
+        <hr/>
+        <p:outputLabel>#{msg.add_students}</p:outputLabel>
+        <h:form id="add_student" style="margin-top: 10px;">
+            <h:panelGrid columns="1">
+                <p:outputLabel>#{msg.student_name}</p:outputLabel>
+                <p:inputText value="#{studentName}" id="name"
+                             required="true" requiredMessage="You must enter a name"/>
+                <p:message for="name"/>
+
+                <p:outputLabel>#{msg.student_exams}</p:outputLabel>
+                <p:inputText value="#{studentExams}" id="exams"
+                             required="true" requiredMessage="You must enter the ids of the exams"/>
+                <p:message for="exams"/>
+
+                <h:commandButton value="#{msg.save_student}"
+                                 action="#{studentController.addStudent(studentName, studentExams)}"/>
+            </h:panelGrid>
+        </h:form>
+
+        <hr/>
+        <p:outputLabel>#{msg.view_students}</p:outputLabel>
+        <p:dataTable value="#{studentController.students}" var="stud" border="1">
+            <p:column>
+                <f:facet name="header">Id</f:facet>
+                #{stud.studentId}
+            </p:column>
+            <p:column>
+                <f:facet name="header">#{msg.student_name}</f:facet>
+                #{stud.name}
+            </p:column>
+            <p:column>
+                <!--            <h:link value="See Exams" outcome="exams"/>-->
+                <f:facet name="header">Exams</f:facet>
+                #{stud.exams}
+            </p:column>
+        </p:dataTable>
+
+        <p:link value="#{msg.exam_page}" outcome="exams"/>
+
+        <p:messages id="errors" style="color: red"/>
+    </h:body>
+</f:view>
+</html>
