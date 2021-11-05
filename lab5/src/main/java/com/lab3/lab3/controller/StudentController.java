@@ -9,32 +9,23 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.naming.NamingException;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 @ManagedBean(name = "studentController")
 @SessionScoped
 public class StudentController implements Serializable {
     private List<Student> students;
-    private StudentService studentService;
-    private ExamService examService;
-    private Logger logger = Logger.getLogger(getClass().getName());
+    private final StudentService studentService;
+    private final ExamService examService;
+    private final Logger logger = Logger.getLogger(getClass().getName());
 
     public StudentController() {
-        try {
-            studentService = new StudentService();
-            examService = new ExamService();
-        } catch (NamingException e) {
-            logger.log(Level.SEVERE, "Error while creating studentService");
-            addErrorMessage(e);
-        }
+        studentService = new StudentService();
+        examService = new ExamService();
         students = new ArrayList<>();
     }
 
@@ -46,7 +37,7 @@ public class StudentController implements Serializable {
         logger.info("Loading students");
         try {
             students = studentService.getStudents();
-        } catch (SQLException | NamingException e) {
+        } catch (Exception e) {
             logger.log(Level.SEVERE, "Error while loading the students");
             addErrorMessage(e);
         }
@@ -83,7 +74,7 @@ public class StudentController implements Serializable {
             student.setExams(exams);
             studentService.addStudent(student);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error while saving the student");
+            logger.log(Level.SEVERE, "Error while saving the student " + e.getMessage());
             addErrorMessage(e);
         }
     }

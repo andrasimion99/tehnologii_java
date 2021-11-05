@@ -2,26 +2,35 @@ package com.lab3.lab3.entity;
 
 
 import javax.faces.bean.ManagedBean;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name = "student")
+@Entity
+@Table(name = "students")
+@NamedQueries({
+        @NamedQuery(name = "Student.findAll", query = "select s from Student s order by s.name"),
+        @NamedQuery(name = "Student.findById", query = "select s from Student s where s.studentId=?1 ")
+})
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
     private Integer studentId;
+    @Column(name = "name")
     private String name;
-    private List<Exam> exams;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "exam_and_student",
+            joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "exam_id", referencedColumnName = "exam_id"))
+    private List<Exam> exams = new ArrayList<>();;
 
     public Student() {
-        exams = new ArrayList<>();
     }
 
     public Student(String name, List<Exam> exams) {
-        this.name = name;
-        this.exams = exams;
-    }
-
-    public Student(Integer studentId, String name, List<Exam> exams) {
-        this.studentId = studentId;
         this.name = name;
         this.exams = exams;
     }

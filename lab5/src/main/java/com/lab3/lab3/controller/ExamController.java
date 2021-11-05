@@ -1,16 +1,13 @@
 package com.lab3.lab3.controller;
 
 import com.lab3.lab3.entity.Exam;
-import com.lab3.lab3.entity.Student;
 import com.lab3.lab3.service.ExamService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.naming.NamingException;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,16 +18,11 @@ import java.util.logging.Logger;
 @SessionScoped
 public class ExamController implements Serializable {
     private List<Exam> exams;
-    private ExamService examService;
-    private Logger logger = Logger.getLogger(getClass().getName());
+    private final ExamService examService;
+    private final Logger logger = Logger.getLogger(getClass().getName());
 
     public ExamController() {
-        try {
-            examService = new ExamService();
-        } catch (NamingException e) {
-            logger.log(Level.SEVERE, "Error while creating examService");
-            addErrorMessage(e);
-        }
+        examService = new ExamService();
         exams = new ArrayList<>();
     }
 
@@ -43,7 +35,7 @@ public class ExamController implements Serializable {
         try {
             ExamService examService = new ExamService();
             exams = examService.getExams();
-        } catch (SQLException | NamingException e) {
+        } catch (Exception e) {
             logger.log(Level.SEVERE, "Error while loading the exams");
             addErrorMessage(e);
         }
@@ -66,7 +58,7 @@ public class ExamController implements Serializable {
         try {
             examService.addExam(exam);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error while saving the exam");
+            logger.log(Level.SEVERE, "Error while saving the exam " + e.getMessage());
             addErrorMessage(e);
         }
     }
