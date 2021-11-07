@@ -54,8 +54,8 @@ public class StudentDao {
 
         entityManager.getTransaction().begin();
 
-        student.setExams(updatedStudent.getExams());
         student.setName(updatedStudent.getName());
+        student.setExams(updatedStudent.getExams());
 
         entityManager.getTransaction().commit();
     }

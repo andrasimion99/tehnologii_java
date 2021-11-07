@@ -5,11 +5,17 @@
                 xmlns:p="http://primefaces.org/ui">
     <h:form>
         <p:tabMenu activeIndex="#{param.i}">
-            <p:menuitem value="Exams" outcome="examsMain">
+            <p:menuitem value="Exams" outcome="exams">
                 <f:param name="i" value="0"/>
             </p:menuitem>
-            <p:menuitem value="Students" outcome="studentsMain">
+            <p:menuitem value="Projects" outcome="projects">
                 <f:param name="i" value="1"/>
+            </p:menuitem>
+            <p:menuitem value="WritingExams" outcome="writingExams">
+                <f:param name="i" value="2"/>
+            </p:menuitem>
+            <p:menuitem value="Students" outcome="students">
+                <f:param name="i" value="3"/>
             </p:menuitem>
         </p:tabMenu>
     </h:form>

@@ -22,12 +22,12 @@ public class Student {
     private Integer studentId;
     @Column(name = "name")
     private String name;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "exam_and_student",
             joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "exam_id", referencedColumnName = "exam_id"))
-    private List<Exam> exams = new ArrayList<>();;
+    private List<Exam> exams = new ArrayList<>();
 
     public Student() {
     }

@@ -13,12 +13,12 @@
     <h:body>
         <p:panelGrid layout="grid" columns="1">
             <ui:insert name="header">
-                <ui:include src="header.xhtml" />
+                <ui:include src="../header.xhtml" />
                 <ui:param name="pageTitle" value="#{pageTitle}" />
             </ui:insert>
 
             <ui:insert name="content">
-                <ui:include src="dataEdit.xhtml">
+                <ui:include src="../dataEdit.xhtml">
                     <ui:param name="entity" value="#{entity}"/>
                     <ui:param name="items" value="#{items}"/>
                     <ui:param name="addEntity" value="#{addEntity}"/>
@@ -29,7 +29,7 @@
                 <h:outputText id="poll" value="All Subject Where students have to take exams: #{counterController.getExam()}"/>
                 <p:poll interval="1" listener="#{counterController.goNext}" update="poll"/>
 
-                <ui:include src="dataView.xhtml">
+                <ui:include src="../dataView.xhtml">
                     <ui:param name="controller" value="#{controller}" />
                     <ui:param name="loadData" value="#{loadData}" />
                     <ui:param name="data" value="#{data}" />
@@ -41,7 +41,7 @@
             <hr/>
 
             <ui:insert name="footer">
-                <ui:include src="footer.xhtml" />
+                <ui:include src="../footer.xhtml" />
             </ui:insert>
         </p:panelGrid>
     </h:body>

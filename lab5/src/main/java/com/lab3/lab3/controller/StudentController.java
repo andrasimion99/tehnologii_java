@@ -1,6 +1,7 @@
 package com.lab3.lab3.controller;
 
 import com.lab3.lab3.entity.Exam;
+import com.lab3.lab3.entity.Project;
 import com.lab3.lab3.entity.Student;
 import com.lab3.lab3.service.ExamService;
 import com.lab3.lab3.service.StudentService;
@@ -9,12 +10,10 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.faces.view.facelets.FaceletContext;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -80,6 +79,7 @@ public class StudentController implements Serializable {
 
         try {
             List<Exam> exams = examService.getExamsById(ids);
+            System.out.println(exams);
             student.setExams(exams);
             studentService.addStudent(student);
         } catch (Exception e) {

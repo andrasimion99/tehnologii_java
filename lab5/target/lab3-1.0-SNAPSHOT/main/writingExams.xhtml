@@ -1,0 +1,16 @@
+<ui:composition template="../templates/page.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+    <ui:param name="pageTitle" value="${msg.title_exams}" />
+
+    <ui:param name="controller" value="#{examController}"/>
+    <ui:param name="loadData" value="loadWritingExams"/>
+    <ui:param name="data" value="#{examController.writingExams}"/>
+    <ui:param name="columns" value="#{writing_exam.getAllFields()}"/>
+
+    <ui:param name="entity" value="#{writing_exam}"/>
+    <ui:param name="items" value="#{writing_exam.getAllInputs()}"/>
+    <ui:param name="addEntity" value="#{msg.add_writing}"/>
+    <ui:param name="addEntityMethod" value="addWritingExam"/>
+</ui:composition>
+

@@ -23,15 +23,15 @@
                 </f:facet>
                 <h:outputText value="#{item[colKey]}"/>
             </p:columns>
-            <p:column>
-                <f:facet name="header">Delete</f:facet>
-                <p:commandButton value="View student" type="button" onclick="PF('dlg').show()">
-<!--                    <f:param id="param1" name="stud" value="#{item['studentId']}"/>-->
-                </p:commandButton>
-            </p:column>
+<!--            <p:column>-->
+<!--                <f:facet name="header">Delete</f:facet>-->
+<!--                <p:commandButton value="View student" type="button" onclick="PF('dlg-see-student').show()">-->
+<!--&lt;!&ndash;                    <f:param id="param1" name="stud" value="#{item['studentId']}"/>&ndash;&gt;-->
+<!--                </p:commandButton>-->
+<!--            </p:column>-->
         </p:dataTable>
     </h:form>
-    <p:dialog header="SEE STUDENT" widgetVar="dlg" minHeight="40" width="350" showEffect="fade" modal="true">
+    <p:dialog header="SEE STUDENT" widgetVar="dlg-see-student" minHeight="40" width="350" showEffect="fade" modal="true">
         <h:form style="margin-top: 10px;">
             <h:panelGrid columns="1">
                 <h:commandButton value="Delete" action="#{studentController.deleteStudent(student)}"/>

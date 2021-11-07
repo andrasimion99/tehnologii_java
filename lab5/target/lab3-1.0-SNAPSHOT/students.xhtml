@@ -21,7 +21,7 @@
         <h:form id="add_student" style="margin-top: 10px;">
             <h:panelGrid columns="1">
                 <p:outputLabel>#{msg.student_name}</p:outputLabel>
-                <p:inputText value="#{studentName}" id="name"
+                <p:inputText value="#{student.name}" id="name"
                              required="true" requiredMessage="You must enter a name"/>
                 <p:message for="name"/>
 
@@ -31,7 +31,7 @@
                 <p:message for="exams"/>
 
                 <h:commandButton value="#{msg.save_student}"
-                                 action="#{studentController.addStudent(studentName, studentExams)}"/>
+                                 action="#{studentController.addStudent(student, studentExams)}"/>
             </h:panelGrid>
         </h:form>
 
