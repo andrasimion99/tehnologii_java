@@ -9,9 +9,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.faces.view.facelets.FaceletContext;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,6 +32,12 @@ public class StudentController implements Serializable {
         students = new ArrayList<>();
     }
 
+    public StudentController(StudentService studentService, ExamService examService) {
+        this.studentService = studentService;
+        this.examService = examService;
+        students = new ArrayList<>();
+    }
+
     public List<Student> getStudents() {
         return students;
     }
@@ -37,7 +46,7 @@ public class StudentController implements Serializable {
         logger.info("Loading students");
         try {
             students = studentService.getStudents();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error while loading the students");
             addErrorMessage(e);
         }
@@ -74,7 +83,34 @@ public class StudentController implements Serializable {
             student.setExams(exams);
             studentService.addStudent(student);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error while saving the student " + e.getMessage());
+            logger.log(Level.SEVERE, "Error while saving the student");
+            addErrorMessage(e);
+        }
+    }
+
+    public void deleteStudent(Student student)
+    {
+        System.out.println("HERE IN DELETE ");
+//        FaceletContext faceletContext = (FaceletContext) FacesContext.getCurrentInstance().getAttributes().get(FaceletContext.FACELET_CONTEXT_KEY);
+//        Student stud = (Student) faceletContext.getAttribute("stud");
+//        System.out.println(stud);
+//        String studId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("stud");
+//        System.out.println(studId);
+//        System.out.println(student);
+        try {
+            studentService.deleteStudent(student);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error while deleting the student");
+            addErrorMessage(e);
+        }
+    }
+
+    public void updateStudent(Student student)
+    {
+        try{
+            studentService.updateStudent(student);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error while updating the student");
             addErrorMessage(e);
         }
     }

@@ -8,6 +8,7 @@
     <ui:param name="loadData" value="loadStudents"/>
     <ui:param name="data" value="#{studentController.students}"/>
     <ui:param name="columns" value="#{student.getAllFields()}"/>
+    <ui:param name="deleteEntityMethod" value="deleteStudent"/>
 
     <ui:param name="entity" value="#{student}"/>
     <ui:param name="items" value="#{student.getAllInputs()}"/>

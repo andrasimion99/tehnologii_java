@@ -24,6 +24,10 @@ public class StudentDao {
         entityManager = emf.createEntityManager();
     }
 
+    public StudentDao(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
     public List<Student> getAll() {
         return entityManager.createNamedQuery("Student.findAll")
                 .getResultList();
@@ -39,4 +43,20 @@ public class StudentDao {
         entityManager.getTransaction().commit();
     }
 
+    public void delete(Student student) {
+        entityManager.getTransaction().begin();
+        entityManager.remove(student);
+        entityManager.getTransaction().commit();
+    }
+
+    public void update(Student updatedStudent) {
+        Student student = entityManager.find(Student.class, updatedStudent.getStudentId());
+
+        entityManager.getTransaction().begin();
+
+        student.setExams(updatedStudent.getExams());
+        student.setName(updatedStudent.getName());
+
+        entityManager.getTransaction().commit();
+    }
 }

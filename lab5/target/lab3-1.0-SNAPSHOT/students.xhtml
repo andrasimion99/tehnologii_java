@@ -37,21 +37,30 @@
 
         <hr/>
         <p:outputLabel>#{msg.view_students}</p:outputLabel>
-        <p:dataTable value="#{studentController.students}" var="stud" border="1">
-            <p:column>
-                <f:facet name="header">Id</f:facet>
-                #{stud.studentId}
-            </p:column>
-            <p:column>
-                <f:facet name="header">#{msg.student_name}</f:facet>
-                #{stud.name}
-            </p:column>
-            <p:column>
-                <!--            <h:link value="See Exams" outcome="exams"/>-->
-                <f:facet name="header">Exams</f:facet>
-                #{stud.exams}
-            </p:column>
-        </p:dataTable>
+        <h:form>
+            <p:dataTable value="#{studentController.students}" var="stud" border="1" lazy="false">
+                <p:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{stud.studentId}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.student_name}</f:facet>
+                    #{stud.name}
+                </p:column>
+                <p:column>
+                    <!--            <h:link value="See Exams" outcome="exams"/>-->
+                    <f:facet name="header">Exams</f:facet>
+                    #{stud.exams}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{studentController.deleteStudent(stud)}" ajax="false"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+
+
 
         <p:link value="#{msg.exam_page}" outcome="exams"/>
 

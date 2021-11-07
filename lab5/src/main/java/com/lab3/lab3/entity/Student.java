@@ -2,6 +2,7 @@ package com.lab3.lab3.entity;
 
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
         @NamedQuery(name = "Student.findAll", query = "select s from Student s order by s.name"),
         @NamedQuery(name = "Student.findById", query = "select s from Student s where s.studentId=?1 ")
 })
+@RequestScoped
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Student {
     private Integer studentId;
     @Column(name = "name")
     private String name;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "exam_and_student",
             joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "student_id"),

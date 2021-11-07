@@ -1,6 +1,7 @@
 package com.lab3.lab3.entity;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
         @NamedQuery(name = "Exam.findAll", query = "select e from Exam e order by e.startingDate"),
         @NamedQuery(name = "Exam.findById", query = "select e from Exam e where e.examId=?1 ")
 })
+@RequestScoped
 public class Exam implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
