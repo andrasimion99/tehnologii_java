@@ -33,7 +33,6 @@ public class Project extends Exam {
     public static List<String> getAllInputs() {
         return new ArrayList<String>() {
             {
-                add("examType");
                 add("name");
                 add("startingDate");
                 add("duration");
