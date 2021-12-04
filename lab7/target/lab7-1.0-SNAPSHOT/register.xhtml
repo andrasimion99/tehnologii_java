@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Register</title>
+</h:head>
+<h:body>
+    <p:outputLabel style="font-size: large" value="Register page"/>
+    <p:panelGrid layout="grid" columns="1">
+        <ui:insert name="header">
+            <ui:include src="./header.xhtml" />
+        </ui:insert>
+
+        <hr/>
+
+        <h:form style="margin-top: 10px;">
+            <h:panelGrid columns="1">
+                <p:outputLabel>Username</p:outputLabel>
+                <p:inputText value="#{userBean.username}" id="username"
+                             required="true" requiredMessage="You must enter a username"/>
+                <p:message for="username"/>
+
+                <p:outputLabel>Password</p:outputLabel>
+                <p:password  value="#{userBean.pass}" id="password" match="pwd2"
+                             required="true" requiredMessage="You must enter a password"/>
+                <p:message for="password"/>
+
+                <p:outputLabel>Repeat Password</p:outputLabel>
+                <p:password  id="pwd2"
+                             required="true" requiredMessage="You must enter again the password"/>
+                <p:message for="pwd2"/>
+
+                <p:selectBooleanCheckbox  value="#{userBean.admin}" itemLabel="isAdmin"/>
+                <p:messages id="errors" style="color: red"/>
+                <p:commandButton value="Register" update="@form" action="#{userController.register(userBean)}"/>
+            </h:panelGrid>
+        </h:form>
+
+        <ui:insert name="footer">
+            <ui:include src="./footer.xhtml" />
+        </ui:insert>
+    </p:panelGrid>
+</h:body>
+</html>

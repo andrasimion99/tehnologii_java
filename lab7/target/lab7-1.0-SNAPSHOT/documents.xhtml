@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event listener="#{documentController.loadDocuments()}" type="preRenderView"/>
+    </f:metadata>
+    <h:body>
+        <p:panelGrid layout="grid" columns="1" rendered="#{cookie['isAdmin'].value == 'true'}">
+            <p:outputLabel style="font-size: large" value="See all documents"/>
+            <h:form>
+                <p:dataTable value="#{documentController.documents}" var="doc" border="1" lazy="false">
+                    <p:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{doc.docId}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">UserId</f:facet>
+                        #{doc.userId}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Filename</f:facet>
+                        #{doc.filename}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Content</f:facet>
+                        <p:commandButton value="Download" action="#{documentController.downloadContent(doc)}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </p:panelGrid>
+    </h:body>
+</ui:composition>
+
