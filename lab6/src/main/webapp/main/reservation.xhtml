@@ -1,0 +1,19 @@
+<ui:composition template="../templates/page.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:param name="pageTitle" value="Reservation page"/>
+
+    <ui:param name="controller" value="#{reservationController}"/>
+    <ui:param name="loadData" value="loadResources"/>
+    <ui:param name="data" value="#{reservationController.resources}"/>
+    <ui:param name="columns" value="#{resourceBean.getAllFields()}"/>
+
+    <ui:param name="entity" value="#{resourceBean}"/>
+    <ui:param name="items" value="#{resourceBean.getAllInputs()}"/>
+    <ui:param name="addEntity" value="Add resource"/>
+    <ui:param name="addEntityMethod" value="addExam"/>
+
+</ui:composition>
+

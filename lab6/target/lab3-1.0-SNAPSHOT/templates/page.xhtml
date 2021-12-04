@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>#{pageTitle}</title>
+    </h:head>
+    <h:body>
+        <p:panelGrid layout="grid" columns="1">
+            <ui:insert name="header">
+                <ui:include src="../header.xhtml" />
+                <ui:param name="pageTitle" value="#{pageTitle}" />
+            </ui:insert>
+
+            <ui:insert name="content">
+                <ui:include src="../dataEdit.xhtml">
+                    <ui:param name="entity" value="#{entity}"/>
+                    <ui:param name="items" value="#{items}"/>
+                    <ui:param name="addEntity" value="#{addEntity}"/>
+                    <ui:param name="controller" value="#{controller}" />
+                    <ui:param name="addEntityMethod" value="#{addEntityMethod}" />
+                </ui:include>
+
+                <ui:include src="../addReservation.xhtml">
+                </ui:include>
+
+                <ui:include src="../dataView.xhtml">
+                    <ui:param name="controller" value="#{controller}" />
+                    <ui:param name="loadData" value="#{loadData}" />
+                    <ui:param name="data" value="#{data}" />
+                    <ui:param name="columns" value="#{columns}" />
+                    <ui:param name="deleteEntityMethod" value="#{deleteEntityMethod}" />
+                </ui:include>
+            </ui:insert>
+
+            <hr/>
+
+            <ui:insert name="footer">
+                <ui:include src="../footer.xhtml" />
+            </ui:insert>
+        </p:panelGrid>
+    </h:body>
+</html>

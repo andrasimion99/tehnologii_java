@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <p:panelGrid layout="grid" columns="1">
+            <p:outputLabel style="font-size: large" value="#{pageTitle}"/>
+            <h:form>
+                <h:panelGrid columns="3">
+                    <p:outputLabel>Language :</p:outputLabel>
+                    <h:commandButton value="English" action="#{languageController.changeLanguage('en')}"/>
+                    <h:commandButton value="Italian" action="#{languageController.changeLanguage('it')}"/>
+                </h:panelGrid>
+            </h:form>
+
+        </p:panelGrid>
+        <ui:insert name="menu">
+            <ui:include src="menuBar.xhtml" />
+        </ui:insert>
+    </h:body>
+</ui:composition>
+

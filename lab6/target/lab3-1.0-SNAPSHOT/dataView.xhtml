@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:metadata>
+    <f:event listener="#{controller[loadData]}" type="preRenderView"/>
+</f:metadata>
+<h:body>
+<!--    <ui:param name="item" value="#{student}" />-->
+<!--    <ui:param name="stud" value="#{data[0]}" />-->
+    <h:form>
+        <p:dataTable value="#{data}" var="item" border="1">
+<!--            <c:set target="#{student}" property="studentId" value="#{item.studentId}"/>-->
+<!--            <ui:param name="stud" value="#{item}" />-->
+            <p:columns value="#{columns}" var="colKey">
+                <f:facet name="header">
+                    <h:outputText value="#{colKey}"/>
+                </f:facet>
+                <h:outputText value="#{item[colKey]}"/>
+            </p:columns>
+<!--            <p:column>-->
+<!--                <f:facet name="header">Delete</f:facet>-->
+<!--                <p:commandButton value="View student" type="button" onclick="PF('dlg-see-student').show()">-->
+<!--&lt;!&ndash;                    <f:param id="param1" name="stud" value="#{item['studentId']}"/>&ndash;&gt;-->
+<!--                </p:commandButton>-->
+<!--            </p:column>-->
+        </p:dataTable>
+    </h:form>
+    <p:dialog header="SEE STUDENT" widgetVar="dlg-see-student" minHeight="40" width="350" showEffect="fade" modal="true">
+        <h:form style="margin-top: 10px;">
+            <h:panelGrid columns="1">
+                <h:commandButton value="Delete" action="#{studentController.deleteStudent(student)}"/>
+            </h:panelGrid>
+        </h:form>
+    </p:dialog>
+</h:body>
+</html>

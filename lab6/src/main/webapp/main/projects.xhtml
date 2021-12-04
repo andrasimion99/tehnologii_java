@@ -1,0 +1,16 @@
+<ui:composition template="../templates/page.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+    <ui:param name="pageTitle" value="${msg.title_exams}" />
+
+    <ui:param name="controller" value="#{examController}"/>
+    <ui:param name="loadData" value="loadProjects"/>
+    <ui:param name="data" value="#{examController.projects}"/>
+    <ui:param name="columns" value="#{project.getAllFields()}"/>
+
+    <ui:param name="entity" value="#{project}"/>
+    <ui:param name="items" value="#{project.getAllInputs()}"/>
+    <ui:param name="addEntity" value="#{msg.add_project}"/>
+    <ui:param name="addEntityMethod" value="addProject"/>
+</ui:composition>
+
