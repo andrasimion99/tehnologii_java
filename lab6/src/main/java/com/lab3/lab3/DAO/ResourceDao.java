@@ -3,8 +3,6 @@ package com.lab3.lab3.DAO;
 import com.lab3.lab3.entity.Exam;
 import com.lab3.lab3.entity.Resource;
 
-import javax.ejb.LocalBean;
-import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -12,9 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//@Stateless(name = "resourceDao")
-@Stateful
-@LocalBean
+@Stateless(name = "resourceDao")
 public class ResourceDao extends AbstractDao<Resource>{
     public ResourceDao() {
         super(Resource.class);

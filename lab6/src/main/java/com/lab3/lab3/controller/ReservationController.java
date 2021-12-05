@@ -6,12 +6,14 @@ import com.lab3.lab3.entity.Exam;
 import com.lab3.lab3.entity.Resource;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateful;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @ManagedBean(name = "reservationController")
+@Stateful
 @Named
 @SessionScoped
 public class ReservationController implements Serializable {
@@ -29,6 +32,8 @@ public class ReservationController implements Serializable {
     private ResourceDao resourceDao;
     @EJB
     private ExamDao examDao;
+    @Inject
+    private AssignmentController assignmentController;
 
     public ReservationController() {
         resources = new ArrayList<>();
@@ -80,6 +85,7 @@ public class ReservationController implements Serializable {
         if (ok) {
             exam.setResources(resourceList);
             examDao.update(exam);
+            assignmentController.add(exam);
         } else {
             logger.log(Level.SEVERE, "The resources are not available");
             addErrorMessage(new Exception("The resources are not available"));
