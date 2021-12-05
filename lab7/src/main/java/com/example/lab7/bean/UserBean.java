@@ -4,11 +4,16 @@ import com.example.lab7.entity.User;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @ManagedBean(name = "userBean")
 @RequestScoped
 public class UserBean {
+    @NotNull
+    @Size(min = 1, max = 50)
     private String username;
+    @Size(min = 4, message = "The password should have at least 4 characters")
     private String pass;
     private boolean admin;
 
@@ -21,7 +26,7 @@ public class UserBean {
         this.admin = isAdmin;
     }
 
-    public User ConvertToEntity(){
+    public User ConvertToEntity() {
         return new User(this.username, this.pass, this.admin);
     }
 

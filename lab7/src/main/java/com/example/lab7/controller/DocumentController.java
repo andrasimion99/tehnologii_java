@@ -4,14 +4,16 @@ import com.example.lab7.bean.DocumentBean;
 import com.example.lab7.dao.DocumentDaoImpl;
 import com.example.lab7.entity.Document;
 
+import javax.enterprise.event.Event;
+import javax.enterprise.event.Observes;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.*;
-import java.util.ArrayList;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,9 +26,11 @@ public class DocumentController {
     DocumentDaoImpl documentDaoImpl;
     private final Logger logger = Logger.getLogger(getClass().getName());
     private List<Document> documents;
+    @Inject
+    Event<Document> documentUpdatedEvent;
+
 
     public DocumentController() {
-        documents = new ArrayList<>();
     }
 
     public void saveFile(DocumentBean bean) {
@@ -35,8 +39,9 @@ public class DocumentController {
             byte[] fileContent = new byte[(int) bean.getFile().getSize()];
             bean.getFile().getInputStream().read(fileContent);
             bean.setContent(fileContent);
-            documentDaoImpl.create(bean.ConvertToEntity());
-
+            Document doc = bean.ConvertToEntity();
+            documentDaoImpl.create(doc);
+            documentUpdatedEvent.fire(doc);
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Successful", bean.getFilename() + " is uploaded.");
             FacesContext.getCurrentInstance().addMessage(null, message);
         } catch (Exception e) {
@@ -67,10 +72,18 @@ public class DocumentController {
     }
 
     public List<Document> getDocuments() {
+        if (documents == null)
+        {
+            documents = documentDaoImpl.getAll();
+        }
         return documents;
     }
 
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
+    }
+
+    public void onDocumentUpdate(@Observes Document document){
+        documents = null;
     }
 }
