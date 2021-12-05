@@ -1,18 +1,20 @@
 package com.example.lab7.bean;
 
 import com.example.lab7.entity.Document;
-import com.example.lab7.entity.User;
 import org.primefaces.model.file.UploadedFile;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import java.util.Arrays;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 @ManagedBean(name = "documentBean")
 @RequestScoped
 public class DocumentBean {
     private UploadedFile file;
+    @Inject @Named("registration")
+    private String registration;
     private String filename;
     private byte[] content;
     @ManagedProperty("#{cookie['userId'].value}")
@@ -29,7 +31,7 @@ public class DocumentBean {
     }
 
     public Document ConvertToEntity(){
-        return new Document(filename, content, Integer.parseInt(username));
+        return new Document(registration, filename, content, Integer.parseInt(username));
     }
 
     public UploadedFile getFile() {
@@ -64,12 +66,20 @@ public class DocumentBean {
         this.username = username;
     }
 
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
     @Override
     public String toString() {
         return "DocumentBean{" +
                 "file=" + file +
+                ", registration='" + registration + '\'' +
                 ", filename='" + filename + '\'' +
-                ", content=" + Arrays.toString(content) +
                 ", username='" + username + '\'' +
                 '}';
     }

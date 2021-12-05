@@ -1,7 +1,7 @@
 package com.example.lab7.controller;
 
 import com.example.lab7.bean.UserBean;
-import com.example.lab7.dao.UserDao;
+import com.example.lab7.dao.UserDaoImpl;
 import com.example.lab7.entity.User;
 
 import javax.faces.application.FacesMessage;
@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 @SessionScoped
 public class UserController{
     @Inject
-    UserDao userDao;
+    UserDaoImpl userDaoImpl;
     private final Logger logger = Logger.getLogger(getClass().getName());
 
     public UserController() {
@@ -33,7 +33,7 @@ public class UserController{
     public void register(UserBean userbean)
     {
         try {
-            userDao.create(userbean.ConvertToEntity());
+            userDaoImpl.create(userbean.ConvertToEntity());
             FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error while registering the user");
@@ -48,7 +48,7 @@ public class UserController{
     public void login(UserBean userBean)
     {
         try {
-            User user = userDao.login(userBean.ConvertToEntity());
+            User user = userDaoImpl.login(userBean.ConvertToEntity());
             setCookie("user", user.getUsername());
             setCookie("userId", String.valueOf(user.getUserId()));
             setCookie("isAdmin", String.valueOf(user.isAdmin()));

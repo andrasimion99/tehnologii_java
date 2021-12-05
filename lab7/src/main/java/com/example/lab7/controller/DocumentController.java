@@ -1,7 +1,7 @@
 package com.example.lab7.controller;
 
 import com.example.lab7.bean.DocumentBean;
-import com.example.lab7.dao.DocumentDao;
+import com.example.lab7.dao.DocumentDaoImpl;
 import com.example.lab7.entity.Document;
 
 import javax.faces.application.FacesMessage;
@@ -11,7 +11,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -22,27 +21,21 @@ import java.util.logging.Logger;
 @SessionScoped
 public class DocumentController {
     @Inject
-    DocumentDao documentDao;
+    DocumentDaoImpl documentDaoImpl;
     private final Logger logger = Logger.getLogger(getClass().getName());
     private List<Document> documents;
-    private Integer startHour = 9;
-    private Integer finishHour = 12;
 
     public DocumentController() {
         documents = new ArrayList<>();
     }
 
     public void saveFile(DocumentBean bean) {
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(now.getHour());
         try {
-            if(now.getHour() < startHour || now.getHour() > finishHour)
-                throw new Exception("Registration closed. Please register between " + startHour + " and " + finishHour);
             bean.setFilename(bean.getFile().getFileName());
             byte[] fileContent = new byte[(int) bean.getFile().getSize()];
             bean.getFile().getInputStream().read(fileContent);
             bean.setContent(fileContent);
-            documentDao.create(bean.ConvertToEntity());
+            documentDaoImpl.create(bean.ConvertToEntity());
 
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Successful", bean.getFilename() + " is uploaded.");
             FacesContext.getCurrentInstance().addMessage(null, message);
@@ -53,13 +46,12 @@ public class DocumentController {
     }
 
     public void loadDocuments() {
-        documents = documentDao.getAll();
-        logSubmissions();
+        documents = documentDaoImpl.getAll();
     }
 
     public void downloadContent(Document doc) {
         // the path is on the server glassfish-5.0\glassfish5\glassfish\domains\domain1\lab7
-        String path = "../lab7/" + doc.getFilename();
+        String path = "../lab7/" + doc.getRegistration() + "-" + doc.getFilename();
         try {
             FileOutputStream fos = new FileOutputStream(path);
             fos.write(doc.getContent());
@@ -72,23 +64,6 @@ public class DocumentController {
     private void addErrorMessage(Exception e) {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error: " + e.getMessage(), "Error: " + e.getMessage());
         FacesContext.getCurrentInstance().addMessage(null, message);
-    }
-
-    private void logSubmissions()
-    {
-        String path = "../lab7/submissions.txt";
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-            for(Document doc: documents)
-            {
-                writer.append(doc.toString());
-                writer.append('\n');
-            }
-            writer.close();
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, e.getMessage());
-            addErrorMessage(e);
-        }
     }
 
     public List<Document> getDocuments() {

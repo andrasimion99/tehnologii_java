@@ -1,7 +1,6 @@
 package com.example.lab7.entity;
 
 import javax.persistence.*;
-import java.util.Arrays;
 
 @Entity
 @Table(name = "documents")
@@ -13,6 +12,8 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "doc_id")
     private Integer docId;
+    @Column(name = "registration")
+    private String registration;
     @Column(name = "filename")
     private String filename;
     @Column(name = "content")
@@ -24,7 +25,8 @@ public class Document {
     public Document() {
     }
 
-    public Document(String filename, byte[] content, Integer userId) {
+    public Document(String registration, String filename, byte[] content, Integer userId) {
+        this.registration = registration;
         this.filename = filename;
         this.content = content;
         this.userId = userId;
@@ -62,10 +64,19 @@ public class Document {
         this.userId = userId;
     }
 
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
     @Override
     public String toString() {
         return "Document{" +
                 "docId=" + docId +
+                ", registration='" + registration + '\'' +
                 ", filename='" + filename + '\'' +
                 ", userId=" + userId +
                 '}';
