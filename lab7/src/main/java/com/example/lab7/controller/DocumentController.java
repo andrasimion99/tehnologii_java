@@ -26,9 +26,9 @@ public class DocumentController {
     DocumentDaoImpl documentDaoImpl;
     private final Logger logger = Logger.getLogger(getClass().getName());
     private List<Document> documents;
+
     @Inject
     Event<Document> documentUpdatedEvent;
-
 
     public DocumentController() {
     }
