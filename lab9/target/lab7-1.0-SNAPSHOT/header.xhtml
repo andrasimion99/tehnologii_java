@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <p:panelGrid layout="grid" columns="1">
+            <p:outputLabel style="font-size: large" value="Welcome to Store Documents Page"/>
+            <h:form>
+                <h:panelGrid columns="3">
+                    <p:button value="Home" outcome="home"/>
+                    <p:button rendered="#{cookie['user'] == null}" value="Login" outcome="login"/>
+                    <p:commandButton rendered="#{cookie['user'] != null}" value="Log out" action="#{userController.logout}"/>
+                    <p:button rendered="#{cookie['user'] == null}" value="Register" outcome="register"/>
+                </h:panelGrid>
+            </h:form>
+        </p:panelGrid>
+    </h:body>
+</ui:composition>
+
