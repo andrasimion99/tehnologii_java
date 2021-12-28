@@ -1,0 +1,151 @@
+********************************************************************************
+product = Open Liberty 21.0.0.12 (wlp-1.0.59.cl211220211117-1256)
+wlp.install.dir = E:/facultate/master/java/java/tehnologii_java/documents/documents/target/liberty/wlp/
+java.home = C:\Program Files\Java\jdk1.8.0_301\jre
+java.version = 1.8.0_301
+java.runtime = Java(TM) SE Runtime Environment (1.8.0_301-b09)
+os = Windows 10 (10.0; amd64) (en_GB)
+process = 19532@DESKTOP-LM50P3I
+********************************************************************************
+[28/12/21 21:55:33:163 EET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server documents has been launched.
+[28/12/21 21:55:37:213 EET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 4.335 seconds
+[28/12/21 21:55:37:280 EET] 00000022 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[28/12/21 21:55:37:674 EET] 0000001a g.apache.cxf.cxf.core.3.2:1.0.59.cl211220211117-1256(id=97)] I Aries Blueprint packages not available. So namespaces will not be registered
+[28/12/21 21:55:37:676 EET] 00000018 g.apache.cxf.cxf.core.3.2:1.0.59.cl211220211117-1256(id=97)] I Aries Blueprint packages not available. So namespaces will not be registered
+[28/12/21 21:55:37:779 EET] 00000016 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[28/12/21 21:55:38:155 EET] 0000001a com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[28/12/21 21:55:39:217 EET] 00000018 rty.security.mp.jwt.v12.config.impl.MpConfigProxyServiceImpl I CWWKS5780I: The MicroProfile JWT version 1.2 mpConfigProxy processed successfully.
+[28/12/21 21:55:39:213 EET] 0000001a com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[28/12/21 21:55:39:231 EET] 00000018 .ws.security.mp.jwt.v11.config.impl.MpConfigProxyServiceImpl I CWWKS5775I: The MicroProfile JWT version 1.1 mpConfigProxy processed successfully.
+[28/12/21 21:55:39:232 EET] 0000001a com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[28/12/21 21:55:39:234 EET] 0000001a com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[28/12/21 21:55:40:334 EET] 0000001e com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: E:/facultate/master/java/java/tehnologii_java/documents/documents/target/liberty/wlp/usr/servers/documents/resources/security/public.jks of type: JKS
+[28/12/21 21:55:40:396 EET] 00000016 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[28/12/21 21:55:40:982 EET] 00000016 com.ibm.ws.security.jwt.internal.ConsumerImpl                I CWWKS6012I: The JSON Web Token (JWT) consumer service is available.
+[28/12/21 21:55:41:016 EET] 00000016 com.ibm.ws.security.jwt.web.JwtEndpointServices              I CWWKS6002I: The JSON Web Token (JWT) endpoint service is available.
+[28/12/21 21:55:41:070 EET] 00000016 com.ibm.ws.security.jaspi.AuthConfigFactoryWrapper           I CWWKS1655I: The default Java Authentication SPI for Containers (JASPIC) AuthConfigFactory class com.ibm.ws.security.jaspi.ProviderRegistry is being used because the Java security property authconfigprovider.factory is not set. 
+[28/12/21 21:55:41:639 EET] 00000016 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[28/12/21 21:55:41:866 EET] 00000016 .microprofile.metrics.internal.monitor.MonitorMetricsHandler I CWPMI2003I: Monitoring metrics can be retrieved through mpMetrics.
+[28/12/21 21:55:42:471 EET] 00000034 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application documents.
+[28/12/21 21:55:42:473 EET] 00000034 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The documents application is using the loose application definition at the E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\apps\documents.war.xml location.
+[28/12/21 21:55:43:174 EET] 00000026 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 2.863 seconds.
+[28/12/21 21:55:43:261 EET] 00000032 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: OpenAPIUI.
+[28/12/21 21:55:43:262 EET] 00000033 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: PublicMicroProfileMetrics.
+[28/12/21 21:55:43:261 EET] 00000035 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: health.
+[28/12/21 21:55:43:261 EET] 00000031 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: MicroProfileOpenAPI.
+[28/12/21 21:55:43:261 EET] 0000002c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.security.jwt.
+[28/12/21 21:55:43:261 EET] 00000030 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: ibm/api.
+[28/12/21 21:55:43:263 EET] 0000001e com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtServiceImpl   I CWWKS5500I: The MicroProfile JWT configuration [MicroProfileJwtService] was successfully processed.
+[28/12/21 21:55:43:267 EET] 0000001e com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtConfigImpl    I CWWKS5500I: The MicroProfile JWT configuration [jwtUserConsumer] was successfully processed.
+[28/12/21 21:55:43:268 EET] 0000001e com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtConfigImpl    I CWWKS5500I: The MicroProfile JWT configuration [defaultMpJwt] was successfully processed.
+[28/12/21 21:55:43:268 EET] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/openapi/ui/
+[28/12/21 21:55:43:274 EET] 00000030 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/ibm/api/
+[28/12/21 21:55:43:278 EET] 0000002c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/jwt/
+[28/12/21 21:55:43:279 EET] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/openapi/
+[28/12/21 21:55:43:280 EET] 00000035 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/health/
+[28/12/21 21:55:43:282 EET] 00000033 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/metrics/
+[28/12/21 21:55:43:439 EET] 00000031 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/jwt
+[28/12/21 21:55:43:439 EET] 00000023 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/health
+[28/12/21 21:55:43:438 EET] 0000002b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/openapi/ui
+[28/12/21 21:55:43:439 EET] 00000024 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/metrics
+[28/12/21 21:55:43:439 EET] 0000002a com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api
+[28/12/21 21:55:43:442 EET] 00000025 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/openapi
+[28/12/21 21:55:43:522 EET] 00000031 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:536 EET] 00000025 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:539 EET] 0000002a com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:541 EET] 00000024 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:542 EET] 0000002b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:543 EET] 00000023 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:43:613 EET] 0000002b com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[28/12/21 21:55:43:972 EET] 00000024 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.metrics.internal.public] [/metrics] [PublicMetricsRESTProxyServlet]: Initialization successful.
+[28/12/21 21:55:43:972 EET] 00000025 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.openapi.2.0.internal] [/openapi] [ApplicationServlet]: Initialization successful.
+[28/12/21 21:55:43:979 EET] 00000023 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckReadinessServlet]: Initialization successful.
+[28/12/21 21:55:43:981 EET] 00000023 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckServlet]: Initialization successful.
+[28/12/21 21:55:43:985 EET] 00000023 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckLivenessServlet]: Initialization successful.
+[28/12/21 21:55:44:252 EET] 00000026 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 21:55:44:457 EET] 00000034 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[lab7].
+[28/12/21 21:55:45:551 EET] 00000034 com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0010I: Performing recovery processing for local WebSphere server (documents).
+[28/12/21 21:55:46:085 EET] 00000034 com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0012I: All persistent services have been directed to perform recovery processing for this WebSphere server (documents).
+[28/12/21 21:55:46:086 EET] 0000003f com.ibm.tx.jta.impl.RecoveryManager                          I WTRN0135I: Transaction service recovering no transactions.
+[28/12/21 21:55:49:946 EET] 00000034 io.openliberty.microprofile.openapi20.ApplicationProcessor   I CWWKO1660I: The application documents was processed and an OpenAPI document was produced.
+[28/12/21 21:55:49:977 EET] 00000034 org.jboss.weld.Version                                       I WELD-000900: 3.1.8 (Final)
+[28/12/21 21:55:51:784 EET] 00000034 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: documents.
+[28/12/21 21:55:51:784 EET] 00000034 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/
+[28/12/21 21:55:51:788 EET] 00000024 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[28/12/21 21:55:51:788 EET] 00000024 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:51:844 EET] 00000024 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application documents started in 9.373 seconds.
+[28/12/21 21:55:51:874 EET] 00000022 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host kubernetes.docker.internal  (IPv4: 127.0.0.1) port 9080.
+[28/12/21 21:55:51:876 EET] 00000022 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host kubernetes.docker.internal  (IPv4: 127.0.0.1) port 9443.
+[28/12/21 21:55:51:884 EET] 00000022 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [appSecurity-3.0, cdi-2.0, distributedMap-1.0, el-3.0, jaxrs-2.1, jaxrsClient-2.1, jdbc-4.2, jndi-1.0, jpa-2.2, jpaContainer-2.2, json-1.0, jsonb-1.0, jsonp-1.1, jwt-1.0, microProfile-4.0, monitor-1.0, mpConfig-2.0, mpFaultTolerance-3.0, mpHealth-3.0, mpJwt-1.2, mpMetrics-3.0, mpOpenAPI-2.0, mpOpenTracing-2.0, mpRestClient-2.0, opentracing-2.0, servlet-4.0, ssl-1.0].
+[28/12/21 21:55:51:885 EET] 00000022 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 14.672 seconds.
+[28/12/21 21:55:51:885 EET] 00000022 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The documents server is ready to run a smarter planet. The documents server started in 19.008 seconds.
+[28/12/21 21:55:51:896 EET] 00000032 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 21:55:54:356 EET] 00000030 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9080/
+[28/12/21 21:55:54:576 EET] 00000030 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application documents has stopped successfully.
+[28/12/21 21:55:54:581 EET] 00000030 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application documents.
+[28/12/21 21:55:54:581 EET] 00000030 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The documents application is using the loose application definition at the E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\apps\documents.war.xml location.
+[28/12/21 21:55:54:810 EET] 00000031 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 21:55:55:931 EET] 00000030 io.openliberty.microprofile.openapi20.ApplicationProcessor   I CWWKO1660I: The application documents was processed and an OpenAPI document was produced.
+[28/12/21 21:55:56:404 EET] 00000030 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: documents.
+[28/12/21 21:55:56:405 EET] 00000030 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/
+[28/12/21 21:55:56:406 EET] 0000002b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[28/12/21 21:55:56:406 EET] 0000002b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 21:55:56:433 EET] 0000002b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application documents updated in 1.852 seconds.
+[28/12/21 21:55:56:443 EET] 00000027 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 22:03:09:681 EET] 000000b7 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9080/
+[28/12/21 22:03:09:695 EET] 000000b7 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application documents has stopped successfully.
+[28/12/21 22:03:09:767 EET] 000000b8 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 22:03:09:780 EET] 000000b7 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application documents.
+[28/12/21 22:03:09:781 EET] 000000b7 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The documents application is using the loose application definition at the E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\apps\documents.war.xml location.
+[28/12/21 22:03:11:246 EET] 000000b7 io.openliberty.microprofile.openapi20.ApplicationProcessor   I CWWKO1660I: The application documents was processed and an OpenAPI document was produced.
+[28/12/21 22:03:11:632 EET] 000000b7 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: documents.
+[28/12/21 22:03:11:632 EET] 000000b7 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/
+[28/12/21 22:03:11:634 EET] 00000067 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[28/12/21 22:03:11:634 EET] 00000067 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[28/12/21 22:03:11:650 EET] 00000067 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application documents updated in 1.870 seconds.
+[28/12/21 22:03:11:657 EET] 0000007d com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\state\plugin-cfg.xml.
+[28/12/21 22:04:43:071 EET] 000000d7 g.apache.cxf.cxf.core.3.2:1.0.59.cl211220211117-1256(id=97)] I Setting the server's publish address to be /data/
+[28/12/21 22:04:43:144 EET] 000000d7 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [documents] [/] [com.example.documents.DocumentsRestApplication]: Initialization successful.
+[28/12/21 22:04:43:443 EET] 000000d7 io.jaegertracing.Configuration                               I Initialized tracer=JaegerTracer(version=Java-1.5.0, serviceName=documents, reporter=RemoteReporter(sender=UdpSender(host=localhost, port=6831), closeEnqueueTimeout=1000), sampler=RemoteControlledSampler(maxOperations=2000, manager=HttpSamplingManager(hostPort=localhost:5778), sampler=ProbabilisticSampler(tags={sampler.type=probabilistic, sampler.param=0.001})), tags={hostname=DESKTOP-LM50P3I, jaeger.version=Java-1.5.0, ip=172.17.128.1}, zipkinSharedRpcSpan=false, expandExceptionLogs=false, useTraceId128Bit=false)
+[28/12/21 22:04:43:444 EET] 000000d7 m.ibm.ws.microprofile.opentracing.jaeger.JaegerTracerFactory I CWMOT1001I: A JaegerTracer instance was created for the documents application.  Tracing information is sent to localhost:6831.
+[28/12/21 22:04:43:549 EET] 000000d7 SystemOut                                                    O getting all documents
+[28/12/21 22:04:43:732 EET] 000000d7 eclipselink                                                  I CWWJP9990I: [eclipselink] EclipseLink, version: Eclipse Persistence Services - 2.7.9.v20210604-2c549e2208
+[28/12/21 22:04:44:342 EET] 000000d7 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8203I: Database product name : MySQL
+[28/12/21 22:04:44:344 EET] 000000d7 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8204I: Database product version : 8.0.27
+[28/12/21 22:04:44:344 EET] 000000d7 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8205I: JDBC driver name  : MySQL Connector/J
+[28/12/21 22:04:44:344 EET] 000000d7 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8206I: JDBC driver version  : mysql-connector-java-8.0.27 (Revision: e920b979015ae7117d60d72bcc8f077a839cd791)
+[28/12/21 22:06:30:229 EET] 000000fe SystemOut                                                    O getting all documents
+[28/12/21 22:07:17:633 EET] 0000011b SystemOut                                                    O getting all documents
+[28/12/21 22:08:57:823 EET] 000000ef SystemOut                                                    O getting all documents
+[28/12/21 22:10:16:040 EET] 00000142 SystemOut                                                    O getting all documents
+[28/12/21 22:11:15:836 EET] 0000016b SystemOut                                                    O getting all documents
+[28/12/21 22:17:08:562 EET] 00000025 SystemOut                                                    O getting all documents
+[28/12/21 22:17:29:555 EET] 00000013 com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Tuesday, 28 December 2021 at 22:17. The server documents is shutting down.
+[28/12/21 22:17:29:559 EET] 000001d4 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[28/12/21 22:17:29:588 EET] 000001c0 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host kubernetes.docker.internal  (IPv4: 127.0.0.1) port 9080.
+[28/12/21 22:17:29:593 EET] 0000019b com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host kubernetes.docker.internal  (IPv4: 127.0.0.1) port 9443.
+[28/12/21 22:17:29:593 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/jwt/
+[28/12/21 22:17:29:593 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/openapi/ui/
+[28/12/21 22:17:29:594 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/health/
+[28/12/21 22:17:29:594 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/metrics/
+[28/12/21 22:17:29:594 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/
+[28/12/21 22:17:29:594 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/ibm/api/
+[28/12/21 22:17:29:594 EET] 0000019b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): https://localhost:9443/openapi/
+[28/12/21 22:17:30:601 EET] 000001d4 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[28/12/21 22:17:30:702 EET] 000001a7 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [documents] [/] [com.example.documents.DocumentsRestApplication]: Destroy successful.
+[28/12/21 22:17:30:717 EET] 000001a7 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application documents has stopped successfully.
+[28/12/21 22:17:30:813 EET] 000001d4 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [io.openliberty.microprofile.openapi.2.0.internal] [/openapi] [ApplicationServlet]: Destroy successful.
+[28/12/21 22:17:30:835 EET] 000001d4 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [io.openliberty.microprofile.metrics.internal.public] [/metrics] [PublicMetricsRESTProxyServlet]: Destroy successful.
+[28/12/21 22:17:30:882 EET] 000001d4 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckReadinessServlet]: Destroy successful.
+[28/12/21 22:17:30:883 EET] 000001d4 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckLivenessServlet]: Destroy successful.
+[28/12/21 22:17:30:883 EET] 000001d4 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckServlet]: Destroy successful.
+[28/12/21 22:17:31:308 EET] 000001d4 com.ibm.tx.jta.impl.FailureScopeController                   A WTRN0105I: The transaction service has shutdown successfully with no transactions requiring recovery.
+[28/12/21 22:17:31:460 EET] 000001d4 rty.security.mp.jwt.v12.config.impl.MpConfigProxyServiceImpl I CWWKS5782I: The MicroProfile JWT version 1.2 mpConfigProxy deactivated successfully.
+[28/12/21 22:17:31:471 EET] 000001d4 .ws.security.mp.jwt.v11.config.impl.MpConfigProxyServiceImpl I CWWKS5777I: The MicroProfile JWT version 1.1 mpConfigProxy deactivated successfully.
+[28/12/21 22:17:31:481 EET] 000001d4 com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtConfigImpl    I CWWKS5502I: The MicroProfile JWT configuration [jwtUserConsumer] was successfully deactivated.
+[28/12/21 22:17:31:482 EET] 000001d4 com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtConfigImpl    I CWWKS5502I: The MicroProfile JWT configuration [defaultMpJwt] was successfully deactivated.
+[28/12/21 22:17:31:483 EET] 000001d4 com.ibm.ws.security.mp.jwt.impl.MicroProfileJwtServiceImpl   I CWWKS5502I: The MicroProfile JWT configuration [MicroProfileJwtService] was successfully deactivated.
+[28/12/21 22:17:31:544 EET] 000001d4 .microprofile.metrics.internal.monitor.MonitorMetricsHandler I CWPMI2004I: All monitoring metrics were unregistered from mpMetrics.
+[28/12/21 22:17:31:784 EET] 000001d4 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[28/12/21 22:17:31:844 EET] 000001d4 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been deactivated. 
+[28/12/21 22:17:33:646 EET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server documents stopped after 22 minutes, 0.768 seconds.

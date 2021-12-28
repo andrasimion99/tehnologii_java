@@ -1,0 +1,8 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      4   28/12/21 18:40:52:133 EET   28/12/21 18:42:00:650 EET com.ibm.websphere.servlet.error.ServletErrorReport com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82
+                                                                            - E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\defaultServer\logs\ffdc\ffdc_21.12.28_18.40.52.0.log
+     1      2   28/12/21 18:40:52:339 EET   28/12/21 18:42:00:650 EET com.ibm.websphere.servlet.error.ServletErrorReport com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144
+                                                                            - E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\defaultServer\logs\ffdc\ffdc_21.12.28_18.40.52.1.log
+------+------+---------------------------+---------------------------+---------------------------
