@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <dir sourceOnDisk="${io.openliberty.tools.projectRoot}\src\main\webapp" targetInArchive="/"/>
+    <dir sourceOnDisk="${io.openliberty.tools.projectRoot}\target\classes" targetInArchive="/WEB-INF/classes"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246366978800\mysql-connector-java-8.0.26.jar" targetInArchive="/WEB-INF/lib/mysql-connector-java-8.0.26.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246526840700\protobuf-java-3.11.4.jar" targetInArchive="/WEB-INF/lib/protobuf-java-3.11.4.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246650970800\javax.transaction-api-1.3.jar" targetInArchive="/WEB-INF/lib/javax.transaction-api-1.3.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246670665200\swagger-annotations-1.6.3.jar" targetInArchive="/WEB-INF/lib/swagger-annotations-1.6.3.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246708820000\jaeger-client-1.5.0.jar" targetInArchive="/WEB-INF/lib/jaeger-client-1.5.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246716492600\jaeger-thrift-1.5.0.jar" targetInArchive="/WEB-INF/lib/jaeger-thrift-1.5.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183246825512700\libthrift-0.13.0.jar" targetInArchive="/WEB-INF/lib/libthrift-0.13.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247027467600\javax.annotation-api-1.3.2.jar" targetInArchive="/WEB-INF/lib/javax.annotation-api-1.3.2.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247044138000\okhttp-4.9.0.jar" targetInArchive="/WEB-INF/lib/okhttp-4.9.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247122631500\okio-2.8.0.jar" targetInArchive="/WEB-INF/lib/okio-2.8.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247176082700\kotlin-stdlib-common-1.4.0.jar" targetInArchive="/WEB-INF/lib/kotlin-stdlib-common-1.4.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247192215500\kotlin-stdlib-1.4.10.jar" targetInArchive="/WEB-INF/lib/kotlin-stdlib-1.4.10.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247318702500\annotations-13.0.jar" targetInArchive="/WEB-INF/lib/annotations-13.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247364635000\jaeger-core-1.5.0.jar" targetInArchive="/WEB-INF/lib/jaeger-core-1.5.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247488389500\opentracing-api-0.33.0.jar" targetInArchive="/WEB-INF/lib/opentracing-api-0.33.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247517319300\opentracing-util-0.33.0.jar" targetInArchive="/WEB-INF/lib/opentracing-util-0.33.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247553342000\opentracing-noop-0.33.0.jar" targetInArchive="/WEB-INF/lib/opentracing-noop-0.33.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247564070800\gson-2.8.6.jar" targetInArchive="/WEB-INF/lib/gson-2.8.6.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247663241000\jaeger-tracerresolver-1.5.0.jar" targetInArchive="/WEB-INF/lib/jaeger-tracerresolver-1.5.0.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247670160300\opentracing-tracerresolver-0.1.8.jar" targetInArchive="/WEB-INF/lib/opentracing-tracerresolver-0.1.8.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247679153900\slf4j-api-1.7.30.jar" targetInArchive="/WEB-INF/lib/slf4j-api-1.7.30.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\libs\183247700599800\slf4j-jdk14-1.7.30.jar" targetInArchive="/WEB-INF/lib/slf4j-jdk14-1.7.30.jar"/>
+    <file sourceOnDisk="${io.openliberty.tools.projectRoot}\target\tmp\META-INF\MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
+</archive>

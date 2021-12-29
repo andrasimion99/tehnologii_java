@@ -1,6 +1,0 @@
-
- Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
-------+------+---------------------------+---------------------------+---------------------------
-     0     11   28/12/21 20:49:35:417 EET   28/12/21 20:49:35:729 EET javax.management.InstanceNotFoundException com.ibm.ws.jmx.internal.DelayedMBeanActivator 104
-                                                                            - E:\facultate\master\java\java\tehnologii_java\documents\documents\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_21.12.28_20.49.35.0.log
-------+------+---------------------------+---------------------------+---------------------------
