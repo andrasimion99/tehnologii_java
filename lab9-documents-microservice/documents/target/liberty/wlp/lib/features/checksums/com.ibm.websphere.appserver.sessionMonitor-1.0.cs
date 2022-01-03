@@ -1,4 +1,4 @@
-#Wed Dec 29 19:59:52 EET 2021
+#Mon Jan 03 11:39:45 EET 2022
 lib/com.ibm.ws.session.monitor_1.0.59.jar=2b517d6823486ee10b058474d6f1c5ae
 dev/api/ibm/com.ibm.websphere.appserver.api.sessionstats_1.0.59.jar=90e6f71c4066037777709ac2c3803ad2
 dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.sessionstats_1.0-javadoc.zip=34300e9805b09cdd457af3c9a692e28f

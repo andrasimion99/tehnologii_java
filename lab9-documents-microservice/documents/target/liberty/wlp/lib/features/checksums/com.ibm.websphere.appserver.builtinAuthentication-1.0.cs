@@ -1,4 +1,4 @@
-#Wed Dec 29 19:59:28 EET 2021
+#Mon Jan 03 11:39:34 EET 2022
 lib/com.ibm.ws.security.authentication_1.0.59.jar=1e1034682672273df2b4a6c862177710
 lib/features/com.ibm.websphere.appserver.builtinAuthentication-1.0.mf=38ec72a7e280f63e29f9c1db240deefb
 lib/com.ibm.ws.security.jaas.common_1.0.59.jar=052695491122851b89f023d80474ed3d

@@ -1,0 +1,14 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      7   03/01/22 14:15:08:114 EET   03/01/22 14:43:49:108 EET org.jboss.weld.exceptions.DefinitionException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.15.08.0.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.18.15.0.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.18.35.0.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.43.22.0.log
+     1      7   03/01/22 14:15:08:182 EET   03/01/22 14:43:49:109 EET com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.15.08.1.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.18.15.1.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.18.35.1.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.43.22.1.log
+------+------+---------------------------+---------------------------+---------------------------

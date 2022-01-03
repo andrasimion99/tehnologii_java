@@ -1,0 +1,10 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      3   03/01/22 14:44:40:908 EET   03/01/22 14:48:42:529 EET org.jboss.weld.exceptions.DefinitionException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.44.40.0.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.48.42.0.log
+     1      3   03/01/22 14:44:40:976 EET   03/01/22 14:48:42:552 EET com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.44.40.1.log
+                                                                            - E:\facultate\master\java\java\tehnologii_java\lab10\target\liberty\wlp\usr\servers\documents\logs\ffdc\ffdc_22.01.03_14.48.42.1.log
+------+------+---------------------------+---------------------------+---------------------------

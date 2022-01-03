@@ -1,4 +1,4 @@
-#Wed Dec 29 19:59:19 EET 2021
+#Mon Jan 03 11:39:31 EET 2022
 lib/com.ibm.ws.javaee.version_1.0.59.jar=f83cbd8553645725e204cd0a633df8be
 lib/com.ibm.ws.javaee.platform.v7_1.0.59.jar=0a38cfc3f3cb190b6f92598324f5786b
 lib/com.ibm.ws.javaee.platform.defaultresource_1.0.59.jar=00c70b471f17cb515c6380c0b4950b17

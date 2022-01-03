@@ -1,4 +1,4 @@
-#Wed Dec 29 19:59:21 EET 2021
+#Mon Jan 03 11:39:31 EET 2022
 dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.httptransport_4.1-javadoc.zip=f40b2ae117ab1599faa3203cf8b163ba
 lib/com.ibm.ws.transport.http_1.0.59.jar=1011114cb93848c6d82507dfc0bd2540
 dev/spi/ibm/com.ibm.websphere.appserver.spi.httptransport_4.1.59.jar=c4fe248241be5c86edfb613a16a11e66

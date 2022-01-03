@@ -1,3 +1,3 @@
-#Wed Dec 29 19:59:30 EET 2021
+#Mon Jan 03 11:39:35 EET 2022
 lib/features/com.ibm.websphere.appserver.internal.optional.jaxws-2.2.mf=f95682b31d6d8156c3161ed155456b8b
 dev/api/spec/com.ibm.websphere.javaee.jaxws.2.2_1.0.59.jar=f1cb3020bcd99fccff723f8d91efcbc2
