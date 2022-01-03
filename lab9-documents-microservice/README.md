@@ -7,3 +7,4 @@ I only had to write the entity class for the document and the dao class which co
 The configuration for the data source is in the config folder from liberty this time, instead of the glassfish server.
 
 I also deployed the microservice into a container with docker. The configuration is in the Dockerfile.
+The mysql database is also deployed and the configuration file si docker-compose.yml.

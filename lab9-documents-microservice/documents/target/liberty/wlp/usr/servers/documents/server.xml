@@ -30,7 +30,7 @@
 
     <dataSource id="lab7" jndiName="jdbc/lab7">
         <jdbcDriver libraryRef="jdbcLib"/>
-        <properties serverName="localhost" portNumber="3306"
+        <properties serverName="localhost" portNumber="3308"
                     databaseName="lab7"
                     user="root"
                     password="admin"/>
