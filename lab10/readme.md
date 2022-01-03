@@ -1,45 +1,16 @@
-# MicroProfile generated Application
+# Lab10
 
-## Introduction
+In lab10 project I refactored the project from the previous lab and added MicroProfile Resilient Api, MicroProfile Metrics api and the HealthCheck.
 
-MicroProfile Starter has generated this MicroProfile application for you.
+I deployed the microservice on the docker, in the last lab.(lab9)
 
-The generation of the executable jar file can be performed by issuing the following command
+In the DocumentController I added healthcheck support implementing the HealthCheck interface and with the help of Readiness and Liveness annotations. These help us to check if our microservice is available for making requests.
 
+Also, in the DocumentController I added monitoring for the ViewDocumentsService method which returns all the documents. Now, when we go to the metrics page we can see the number of invocations and the response time for this method since the server is up and running.
 
-    mvn clean package
-
-This will create an executable jar file **documents.jar** within the _target_ maven folder. This can be started by executing the following command
-
-    java -jar target/documents.jar
-
-
-
-### Liberty Dev Mode
-
-During development, you can use Liberty's development mode (dev mode) to code while observing and testing your changes on the fly.
-With the dev mode, you can code along and watch the change reflected in the running server right away; 
-unit and integration tests are run on pressing Enter in the command terminal; you can attach a debugger to the running server at any time to step through your code.
-
-
-    mvn liberty:dev
-
-
-
-
-
-To launch the test page, open your browser at the following URL
-
-    http://localhost:9080/index.html  
-
-
-
-## Specification examples
-
-By default, there is always the creation of a JAX-RS application class to define the path on which the JAX-RS endpoints are available.
-
-Also, a simple Hello world endpoint is created, have a look at the class **HelloController**.
-
-More information on MicroProfile can be found [here](https://microprofile.io/)
-
-
+For the resilient api I've created a separate controller to test the scenarios: ResilienceController. Here we have the following methods:
+- checkTimeout, implementing the timeout fallback procedure. The fallback method is called when the timeout is reached.
+- retryTimeout, implementing the timeout fallback procedure with retries. A retry will be made after the TimeoutException is thrown and this exception will be thrown after the timeout is reached and the fallback method will be called then.
+- checkCircuit, which called the method() which somethimes fails. After it failed once, for the next 5 seconds, the method will not be called anymore as the circuit will be on and will consider that the method is throwing exception.
+- checkConcurrentRequests, which implements the Bulkhead procedure with the semaphore implementation and limits the number of concurrent requests to 2
+- checkConcurrentRequestsAsync, which implements the Bulkhead procedure with the thread pool implementation and allows some requests in the waiting queue

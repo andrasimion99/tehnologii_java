@@ -49,11 +49,22 @@ public class ResilienceController {
     }
 
     @GET
+    @Path("semaphore")
+    @Bulkhead(value = 2)
+    @Fallback(fallbackMethod = "fallback")
+    public String checkConcurrentRequests() throws InterruptedException {
+        System.out.println("Called checkConcurrentRequests endpoint");
+        Thread.sleep(10000);
+        System.out.println("Finish the call");
+        return "Successfully called";
+    }
+
+    @GET
     @Path("bulkhead")
     @Bulkhead(value = 2, waitingTaskQueue = 2)
     @Asynchronous
     @Fallback(fallbackMethod = "fallbackAsync")
-    public CompletionStage<String> checkConcurrentRequests() {
+    public CompletionStage<String> checkConcurrentRequestsAsync() {
         CompletableFuture<String> future = new CompletableFuture<>();
         Executors.newCachedThreadPool().submit(() -> {
             System.out.println("Called checkConcurrentRequests endpoint");
